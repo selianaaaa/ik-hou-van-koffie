@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+
+# production build output
+/dist
+
+# dotenv environment variables file
+.env
+
+# log files
+/logs
+
+# coverage reports
+/coverage
+
+# MacOS system files
+.DS_Store
