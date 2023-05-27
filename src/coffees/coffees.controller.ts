@@ -9,6 +9,8 @@ import {
   Patch,
   Post,
   Query,
+  UsePipes,
+  ValidationPipe,
 } from "@nestjs/common"
 import { CoffeesService } from "./coffees.service"
 import { CreateCoffeeDto } from "./dto/create-coffee.dto/create-coffee.dto"
@@ -37,7 +39,10 @@ export class CoffeesController {
   }
 
   @Patch(":id")
-  update(@Param("id") id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
+  update(
+    @Param("id") id: string,
+    @Body(ValidationPipe) updateCoffeeDto: UpdateCoffeeDto
+  ) {
     return this.coffeesService.update(id, updateCoffeeDto)
   }
 
